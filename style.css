@@ -1,0 +1,333 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    background: #e9e9e9;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* CONTAINER */
+
+.container{
+    width: 100%;
+    max-width: 42rem;
+    height: 100vh;
+    background: #f7f7f7;
+    border-radius: 3rem;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width: 9rem;
+    min-width: 9rem;
+    height: 100vh;
+    background: #700E0F;
+    padding: 2rem 0 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.icon img{
+    width: 4.5rem;
+    object-fit: cover;
+}
+
+.icon1 img{
+    width: 2.5rem;
+    object-fit: cover;
+}
+
+/* MORE BUTTON */
+
+/* .more-btn{
+    background: white;
+    color: black;
+    padding: .7rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+} */
+
+.more-btn{
+    font-family: "Caveat Brush", cursive;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* MENU ITEM */
+
+.menu-item{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .7rem;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    border-radius: 2.5rem 0 0 2.5rem;
+
+    transition:
+        background .35s ease,
+        color .35s ease,
+        transform .25s ease;
+}
+
+/* ICON */
+
+.menu-item .icon{
+    font-size: 2.5rem;
+}
+
+/* TEXT */
+
+.menu-item span{
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+}
+
+/* HOVER */
+
+.menu-item:hover{
+    transform: translateX(.4rem);
+}
+
+/* ACTIVE MENU ITEM */
+
+.menu-item.active{
+    background: #f7f7f7;
+    color: #d59a45;
+    z-index: 5;
+}
+
+/* TOP CURVE */
+
+.menu-item.active::before{
+    content: "";
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border-bottom-right-radius: 3rem;
+    box-shadow:
+        .8rem .8rem 0 .2rem #f7f7f7;
+    pointer-events: none;
+}
+
+/* BOTTOM CURVE */
+
+.menu-item.active::after{
+    content: "";
+    position: absolute;
+    bottom: -3rem;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border-top-right-radius: 3rem;
+    box-shadow:
+        .8rem -.8rem 0 .2rem #f7f7f7;
+
+    pointer-events: none;
+}
+
+/* MAIN CONTENT */
+
+.main-content{
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 2rem;
+    scroll-behavior: smooth;
+}
+
+/* SCROLLBAR */
+
+.main-content::-webkit-scrollbar{
+    width: .4rem;
+}
+
+.main-content::-webkit-scrollbar-thumb{
+    background: #cfcfcf;
+    border-radius: 2rem;
+}
+
+/* LOGO */
+
+/* .logo-box{
+    text-align: center;
+    margin-bottom: 3rem;
+} */
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0;
+}
+
+.content img{
+    height: 7.5rem;
+    object-fit: cover;
+    margin-top: 0;
+}
+
+.content h1{
+    font-family: 'Trajan Pro', serif;
+    font-size: 2rem;
+    color: #D79A70;
+    letter-spacing: .2rem;
+}
+
+/* .logo-box p{
+    margin-top: .5rem;
+    color: #999;
+    font-size: 1.1rem;
+} */
+
+/* MENU SECTION */
+
+.menu-section{
+    display: none;
+    animation: fade .4s ease;
+}
+
+.active-section{
+    display: block;
+}
+
+/* CARD */
+
+.card{
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card img{
+    width: 100%;
+    max-width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow:
+        0 .5rem 2rem rgba(0,0,0,0.18);
+}
+
+.card h2{
+    font-family: "Caveat Brush", cursive;
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    font-weight: 200;
+    color: #222;
+}
+
+.card p{
+    margin-top: .7rem;
+    font-size: 1.5rem;
+    color: #d65b4b;
+    font-weight: bold;
+}
+
+/* FADE ANIMATION */
+
+@keyframes fade{
+
+    from{
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width:480px){
+
+    body{
+        padding: 0;
+    }
+
+    .container{
+        max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .sidebar{
+        width: 8rem;
+        min-width: 8rem;
+        height: 100vh;
+    }
+
+    .menu-item{
+        height: 7.5rem;
+    }
+
+    .menu-item .icon{
+        font-size: 2.3rem;
+    }
+
+    .menu-item span{
+        font-size: 1rem;
+    }
+
+    .main-content{
+        height: 100vh;
+
+        padding: 1.8rem;
+    }
+
+    .card img{
+        max-width: 18rem;
+        height: 18rem;
+    }
+
+    .card h2{
+        font-size: 1.8rem;
+    }
+
+}
